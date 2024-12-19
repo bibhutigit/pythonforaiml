@@ -60,3 +60,27 @@ csv_data["temp"] = csv_data.temp/32
 sel_cols = csv_data[["day","temp","condition"]]
 print(sel_cols)
 
+# Create dataframe from dictionary
+data_dict = {
+    "student_name":["Jacob", "Ryan", "Jackman"]
+    ,"marks":[89, 95, 69]
+}
+my_df = pd.DataFrame(data_dict)
+print(my_df)
+
+# Create dataframe from lists
+my_data_list = ["John", "Jacob", "Clifton"]
+my_name_df = pd.DataFrame(my_data_list,columns=["Name"])
+print(my_name_df)
+
+# From multiple lists
+name_data_list = ["John", "Jacob", "Clifton"]
+marks_data_list = [80, 90, 95]
+student_data_df = pd.DataFrame(zip(name_data_list,marks_data_list),columns=["Name","Marks"])
+print(student_data_df)
+
+# From mul-dimensional lists
+
+my_mul_dim_lists = [["John",80],["Jacob",90],["Clifton",95]]
+student_data_df = pd.DataFrame(my_mul_dim_lists,columns=["Name","Marks"])
+print(student_data_df)
