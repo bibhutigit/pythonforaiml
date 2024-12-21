@@ -12,3 +12,9 @@ result_data_dict = {
 
 result_df = pd.DataFrame(result_data_dict)
 result_df.to_csv("./squirrel_color_counts.csv")
+
+# Using Group By Aggregate Functions
+fur_color_count = squirrel_data.groupby("Primary Fur Color")["Primary Fur Color"].count()
+groupby_result = fur_color_count.reset_index(name="Fur_Color_Count")
+print("Fur Color DF")
+print(groupby_result)
